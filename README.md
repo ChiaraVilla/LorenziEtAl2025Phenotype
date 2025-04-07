@@ -39,6 +39,15 @@ along with this program.  If not, see https://www.gnu.org/licenses/.
 The code is set up to simulate the PS-PDE (7) in Lorenzi et al. (2025), using the numerical scheme outlined in Section 4.3 of the paper.
 This corresponds to simulating diffusion-driven movement of a cell population with phenotype-dependent diffusion coefficient. <br />
 
+**Numerical scheme** <br />
+The numerical scheme is based on the method of lines, employing a finite volume approximation in physical and phenotype space. See Section 4.3 in Lorenzi et al. (2025) for more details. <br />
+
+**Files content** <br />
+- 'PhenMotion_Diff.py' : this is the main python script to run in order to simulate the model. You can change here: model parameters, grid definition, time-integration method. The script calls the function 'odeRHSeps' in which the ODE system (obtained upon finite volume approximation of the spatial derivatives) to solve is stored, and the function 'plot_TW' to plot the solution over time: make sure that the files 'odeRHSeps_Diff.py' and 'plot_Diff.py' are in the same folder as 'PhenMotion_Diff.py' when running the file. <br />
+- 'odeRHSeps_Diff.py' : this file stores the function 'odeRHSeps' (called from the main file 'PhenMotion_Diff.py') in which the ODE system obtained upon finite volume approximation of the spatial derivatives is stored. You can change here: the definition of the diffusion coefficient D(y) and the cell proliferation and death term (defined in "kinetics"), as well as details of the finite volume scheme. <br />
+- 'plot_Diff.py' : this file stores the function 'plot_TW' (called from the main file 'PhenMotion_Diff.py') to plot the solution at a given time t. You can change here: the plot.<br />
+- 'PhenMotion_Diff_notebook.ipynb' : this file is a Jubiter notebook encoding all parts of the python script found in the files 'PhenMotion_Diff.py', 'odeRHSeps_Diff.py' and 'plot_Diff.py', should you prefer to work with this instead. Just make sure to run the different sections of the notebook in the correct order.
+
 ## For students
 
 <i>Are you a student?</i><br />
