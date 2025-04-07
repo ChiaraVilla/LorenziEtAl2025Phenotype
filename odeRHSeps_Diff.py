@@ -5,7 +5,7 @@
 ### \rho(t,x) = \int_0^1 n(t,x,y) dy
 ###
 ### Diffusion-driven motion: 
-### D(y) = Diffx * y ;    A(y,\rho,S) = 0 ;    R(y,\rho,S) = r*(1-y-\rho)
+### D(y) = Diffx * y ;    A(y,\rho,S) = 0 ;    R(y,\rho,S) = r*(1-y)-k*\rho)
 ### 
 ######################################################################################
 
@@ -28,11 +28,9 @@ def odeRHSeps(t,sol):
     
     # Flux contributions from spatial movement and phenotypic changes
     dflux = (flx[1:,:]-flx[:-1,:])/dx + (fly[:,1:]-fly[:,:-1])/dy;
-    print(dflux.shape)
     
-    # Cell proliferation and death, here F=n*R with R=r*(1-y-rho)
-    kinetics = r*n*( np.ones((Nx,Ny))-np.tile(y,(Nx,1))-np.tile(rho,(Ny,1)).T );
-    print(kinetics.shape)
+    # Cell proliferation and death, here F=n*R with R=r*(1-y)-k*\rho)
+    kinetics = n*( r*(np.ones((Nx,Ny))-np.tile(y,(Nx,1))) - k*np.tile(rho,(Ny,1)).T );
     
     # Store RHS of ODE system obtained via the MOL in dndt
     dndt = dflux + kinetics;

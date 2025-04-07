@@ -16,7 +16,7 @@
 ### \rho(t,x) = \int_0^1 n(t,x,y) dy
 ###
 ### Diffusion-driven motion: 
-### D(y) = Diffx * y ;    A(y,\rho,S) = 0 ;    R(y,\rho,S) = r*(1-y-\rho)
+### D(y) = Diffx * y ;    A(y,\rho,S) = 0 ;    R(y,\rho,S) = r*(1-y)-k*\rho)
 ### 
 ######################################################################################
 ###
