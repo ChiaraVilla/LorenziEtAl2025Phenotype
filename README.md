@@ -8,7 +8,7 @@ This repository provides Python code to simulate a phenotype-structured PDE (PS-
 It is supporting material for the tutorial-style review article: <br />
 Tommaso Lorenzi, Kevin J. Painter, Chiara Villa (2025) <br />
 <i>Phenotype structuring in collective cell migration:
-a tutorial of mathematical models and methods<i />
+a tutorial of mathematical models and methods</i>
 
 Matlab files to simulate the microscopic and macroscopic models in <br />
 Tommaso Lorenzi, Nadia Loy, Chiara Villa (2024) <br />
