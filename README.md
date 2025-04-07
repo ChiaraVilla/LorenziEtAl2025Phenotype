@@ -16,7 +16,7 @@ Available of ArXiv [arXiv:2410.13629] and HAL [hal-04851615] <br />
 Kevin J. Painter (Politecnico di Torino) and Chiara Villa (Centre Inria de Saclay)
 
 **Citation** <br />
-Painter, K.J. and Villa, C. (2025). Python code to simulate phenotype-structured PDE models of collective cell migration. <br />
+Villa, C. and Painter, K.J. (2025). Python code to simulate phenotype-structured PDE models of collective cell migration. <br />
 If you use this software in your work then please cite the above named paper.
 
 **Copyright notice** <br />
