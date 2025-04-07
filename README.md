@@ -58,7 +58,12 @@ Just follow the scheme outlined in Section 4.3 ("Discretisation in phenotype and
 Try speeding up the code, by experimenting with time-splitting schemes or employing the WKB ansatz, as hinted at at the end of Section 4.3 ("Time integration") of the manuscript.<br />
 
 Buon lavoro!<br />
-Tommaso, Kevin & Chiara
+Tommaso, Kevin & Chiara <br />
+
+<i>You can find our contact information on our websites:</i> <br />
+https://staff.polito.it/tommaso.lorenzi/contacts.html <br />
+https://sites.google.com/view/kevinjpainter/home <br />
+https://chiaravilla.github.io/website/contact.html
 
 
 
