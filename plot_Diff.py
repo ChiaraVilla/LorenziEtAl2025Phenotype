@@ -1,7 +1,8 @@
 ### Function to plot travelling wave solution
+import numpy as np
+import matplotlib.pyplot as plt
 
-def plot_TW(n,t):
-    global Nx, Ny, dx, dy, x, y, Xm
+def plot_TW(n, t, Nx, Ny, dx, dy, x, y, Xm):
     fig, (ax1,ax2) = plt.subplots(2,1,figsize=(11, 4))
     im = ax1.pcolormesh(x,y,n.T,shading='auto') 
     fig.colorbar(im,ax=ax1,orientation='vertical',label='n(x,y)')
