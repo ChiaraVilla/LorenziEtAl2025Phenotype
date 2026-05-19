@@ -8,9 +8,9 @@
 ### D(y) = Diffx * y ;    A(y,\rho,S) = 0 ;    R(y,\rho,S) = r*(1-y)-k*\rho)
 ### 
 ######################################################################################
+import numpy as np
 
-def odeRHSeps(t,sol):
-    global Diffx, Diffy, r, k, Nx, Ny, dx, dy, x, y
+def odeRHSeps(t, sol, Diffx, Diffy, r, k, Nx, Ny, dx, dy, x, y):
     
     # Reshape sol into n(x,y), Integrate n to obtain rho
     n = np.reshape(sol,(Nx,Ny));
