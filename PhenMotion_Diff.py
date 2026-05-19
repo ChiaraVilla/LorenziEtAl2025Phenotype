@@ -5,7 +5,7 @@
 ###
 ###                 T. Lorenzi, K.J. Painter, C. Villa (2025)
 ###
-### Contact: C. Villa at < chiara.villa@inria.fr >
+### Contact: C. Villa at < chiara.villa@math.cnrs.fr >
 ###
 ######################################################################################
 ###
@@ -83,7 +83,7 @@ nsaved = np.zeros((Nx,Ny,tstore.size));
 nsaved[:,:,0] = n0;
 # Initialise plot
 print(f't = {tstore[0]}')
-plot_TW(n0,tstore[0])
+plot_TW(n0, tstore[0], Nx, Ny, dx, dy, x, y, Xm)
 
 # Iterate in time 
 n = n0;
@@ -91,18 +91,18 @@ for i in range(tstore.size-1):
     # Re-shape initial condition for time iteration of vectorised system
     n = np.reshape(n,(Nx*Ny,));
     # Solve ODE system
-    solution = solve_ivp(
+    sol = solve_ivp(
         odeRHSeps,                # RHS of the ODE system (vectorized)
         (tstore[i],tstore[i+1]),  # Time interval
         n,                        # Initial conditions (vectorised)
+        args = (Diffx, Diffy, r, k, Nx, Ny, dx, dy, x, y), # Arguments for odeRHSeps
         method = 'RK45',          # Integrator method (explicit, adaptive time-step)
 #         method = 'BDF',         # Integrator method (implicit)
         rtol = 1e-8,              # Relative tolerance
         atol = 1e-8,              # Absolute tolerance
         vectorized = True         # Use vectorized mode
     )
-    sol = solve_ivp(odeRHSeps,(tstore[i],tstore[i+1]),n,method='BDF',rtol=1e-8,atol=1e-8)
+    #sol = solve_ivp(odeRHSeps,(tstore[i],tstore[i+1]),n,method='BDF',rtol=1e-8,atol=1e-8, args=(Diffx, Diffy, r, k, Nx, Ny, dx, dy, x, y));
     n = np.reshape(sol.y[:,-1],(Nx,Ny));
     nsaved[:,:,i+1] = n;
-    plot_TW(n,tstore[i+1]) # Plot solution
-
+    plot_TW(n, tstore[i+1], Nx, Ny, dx, dy, x, y, Xm) # Plot solution
